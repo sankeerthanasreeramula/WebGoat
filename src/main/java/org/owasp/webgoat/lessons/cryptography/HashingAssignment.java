@@ -52,6 +52,7 @@ public class HashingAssignment extends AssignmentEndpoint {
 
       String secret = SECRETS[new Random().nextInt(SECRETS.length)];
 
+      # FIXME[CWE-328]: Replace the broken hash (MD5/SHA-1) with SHA-256+ or a KDF. (OWASP ASVS V6.2.1)
       MessageDigest md = MessageDigest.getInstance("MD5");
       md.update(secret.getBytes());
       byte[] digest = md.digest();
