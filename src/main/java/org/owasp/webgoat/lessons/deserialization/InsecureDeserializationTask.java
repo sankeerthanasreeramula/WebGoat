@@ -57,6 +57,7 @@ public class InsecureDeserializationTask extends AssignmentEndpoint {
     try (ObjectInputStream ois =
         new ObjectInputStream(new ByteArrayInputStream(Base64.getDecoder().decode(b64token)))) {
       before = System.currentTimeMillis();
+      # FIXME[CWE-502]: Deserialise untrusted data with a safe schema / class allow-list. (OWASP ASVS V5.5.3)
       Object o = ois.readObject();
       if (!(o instanceof VulnerableTaskHolder)) {
         if (o instanceof String) {
