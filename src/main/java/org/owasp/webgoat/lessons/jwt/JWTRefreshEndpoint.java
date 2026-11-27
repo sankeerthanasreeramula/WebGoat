@@ -59,6 +59,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class JWTRefreshEndpoint extends AssignmentEndpoint {
 
   public static final String PASSWORD = "bm5nhSkxCXZkKRy4";
+  # FIXME[CWE-798]: Move the credential to the environment / secret store. (OWASP ASVS V2.10)
   private static final String JWT_PASSWORD = "bm5n3SkxCX4kKRy4";
   private static final List<String> validRefreshTokens = new ArrayList<>();
 
